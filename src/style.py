@@ -1,7 +1,6 @@
 import base64
 import json
 from pathlib import Path
-from turtle import left
 
 import plotly.graph_objects as go
 import plotly.io as pio
