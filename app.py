@@ -83,7 +83,7 @@ with st.container(key="sec_aliran"):
 # ---- 3. Jaringan ----
 with st.container(key="sec_jaringan"):
     style.anchor("jaringan")
-    st.header("3. Seberapa bergantung Indonesia?")
+    st.header("3. Pelabuhan/Bandara mana yang melayani negara mana?")
     with st.spinner("Membangun jaringan negara tujuan..."):
         render_jaringan(tahun)
 
@@ -130,6 +130,7 @@ with st.container(key="sec_akhir"):
 - Analisis di level chapter, bukan komoditas rinci.
 - Nama kelompok komoditas adalah ringkasan penulis, bukan nama resmi BTKI.
 - Ambang nilai dan jumlah negara teratas memengaruhi tampilan Aliran dan Jaringan.
+- Kolom pelabuhan pada data BPS mencampur pelabuhan laut dan bandara (bertanda "(U)"), dan keduanya diperlakukan sama.
 """)
     with b:
         st.subheader("Penggunaan alat AI")
