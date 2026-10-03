@@ -328,7 +328,8 @@ def render_jaringan(tahun: int):
             st.plotly_chart(_fig_network_force(G, node_fokus), use_container_width=True)
         else:
             st.plotly_chart(_fig_network_geo(G, node_fokus), use_container_width=True)
-    
+        style.chart_footer("USD")
+
     # --- Panduan Membaca Graf Keterkaitan ---
     with st.expander("Panduan Membaca Graf Keterkaitan", expanded=False):
         st.markdown("""
@@ -345,6 +346,7 @@ def render_jaringan(tahun: int):
     
     if not df_filtered.empty:
         st.plotly_chart(_fig_matrix(df_filtered), use_container_width=True)
+        style.chart_footer("USD")
     else:
         st.info("Tidak ada data yang memenuhi ambang batas filter saat ini.")
         
