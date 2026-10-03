@@ -1,0 +1,25 @@
+hs2,nama_chapter,seksi,nama_seksi
+01,Hewan hidup,I,Produk Hewani
+02,Daging dan jeroan yang dapat dimakan,I,Produk Hewani
+03,Ikan dan krustasea,I,Produk Hewani
+04,Susu; telur unggas; madu,I,Produk Hewani
+05,Produk hewani lainnya,I,Produk Hewani
+06,Tanaman hidup dan bunga,II,Produk Nabati
+07,Sayuran,II,Produk Nabati
+08,Buah dan kacang-kacangan,II,Produk Nabati
+09,"Kopi, teh, rempah-rempah",II,Produk Nabati
+10,Serealia,II,Produk Nabati
+11,Produk penggilingan,II,Produk Nabati
+12,Biji dan buah mengandung minyak,II,Produk Nabati
+13,Getah dan damar,II,Produk Nabati
+14,Bahan anyaman nabati,II,Produk Nabati
+15,Lemak dan minyak hewani/nabati,III,Lemak dan Minyak
+16,Olahan daging dan ikan,IV,"Makanan Olahan, Minuman, Tembakau"
+17,Gula dan kembang gula,IV,"Makanan Olahan, Minuman, Tembakau"
+18,Kakao dan olahannya,IV,"Makanan Olahan, Minuman, Tembakau"
+19,"Olahan serealia, tepung, pati",IV,"Makanan Olahan, Minuman, Tembakau"
+20,Olahan sayuran dan buah,IV,"Makanan Olahan, Minuman, Tembakau"
+21,Olahan makanan lain-lain,IV,"Makanan Olahan, Minuman, Tembakau"
+22,"Minuman, alkohol, cuka",IV,"Makanan Olahan, Minuman, Tembakau"
+23,Sisa industri makanan; pakan ternak,IV,"Makanan Olahan, Minuman, Tembakau"
+24,Tembakau,IV,"Makanan Olahan, Minuman, Tembakau"

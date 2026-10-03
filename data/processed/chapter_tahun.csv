@@ -1,0 +1,73 @@
+hs2,nilai_usd,tahun,yoy_pct,nama_chapter,seksi,nama_seksi
+01,27184228.5,2023,,Hewan hidup,I,Produk Hewani
+02,20746395.310000002,2023,,Daging dan jeroan yang dapat dimakan,I,Produk Hewani
+03,3618870450.46,2023,,Ikan dan krustasea,I,Produk Hewani
+04,695026851.67,2023,,Susu; telur unggas; madu,I,Produk Hewani
+05,42404959.13,2023,,Produk hewani lainnya,I,Produk Hewani
+06,19931368.23,2023,,Tanaman hidup dan bunga,II,Produk Nabati
+07,131493497.43,2023,,Sayuran,II,Produk Nabati
+08,637635541.8100001,2023,,Buah dan kacang-kacangan,II,Produk Nabati
+09,1611870416.55,2023,,"Kopi, teh, rempah-rempah",II,Produk Nabati
+10,31089338.89,2023,,Serealia,II,Produk Nabati
+11,186445624.38,2023,,Produk penggilingan,II,Produk Nabati
+12,450179641.69,2023,,Biji dan buah mengandung minyak,II,Produk Nabati
+13,213622700.32,2023,,Getah dan damar,II,Produk Nabati
+14,628910634.42,2023,,Bahan anyaman nabati,II,Produk Nabati
+15,28451802106.3,2023,,Lemak dan minyak hewani/nabati,III,Lemak dan Minyak
+16,1361782373.43,2023,,Olahan daging dan ikan,IV,"Makanan Olahan, Minuman, Tembakau"
+17,514669246.84000003,2023,,Gula dan kembang gula,IV,"Makanan Olahan, Minuman, Tembakau"
+18,1197695299.4,2023,,Kakao dan olahannya,IV,"Makanan Olahan, Minuman, Tembakau"
+19,1495031394.86,2023,,"Olahan serealia, tepung, pati",IV,"Makanan Olahan, Minuman, Tembakau"
+20,378381713.01,2023,,Olahan sayuran dan buah,IV,"Makanan Olahan, Minuman, Tembakau"
+21,1624689913.1,2023,,Olahan makanan lain-lain,IV,"Makanan Olahan, Minuman, Tembakau"
+22,192251112.24,2023,,"Minuman, alkohol, cuka",IV,"Makanan Olahan, Minuman, Tembakau"
+23,2625531232.94,2023,,Sisa industri makanan; pakan ternak,IV,"Makanan Olahan, Minuman, Tembakau"
+24,1747794428.5,2023,,Tembakau,IV,"Makanan Olahan, Minuman, Tembakau"
+01,5415689.2,2024,-80.07782637642265,Hewan hidup,I,Produk Hewani
+02,21694770.34,2024,4.571276194389633,Daging dan jeroan yang dapat dimakan,I,Produk Hewani
+03,3995628247.52,2024,10.410922474776893,Ikan dan krustasea,I,Produk Hewani
+04,621490839.16,2024,-10.580312448836873,Susu; telur unggas; madu,I,Produk Hewani
+05,45279027.02,2024,6.777669284361365,Produk hewani lainnya,I,Produk Hewani
+06,21268653.2,2024,6.709448917747474,Tanaman hidup dan bunga,II,Produk Nabati
+07,156309906.11,2024,18.872726914280243,Sayuran,II,Produk Nabati
+08,967905958.22,2024,51.796111533006815,Buah dan kacang-kacangan,II,Produk Nabati
+09,2695782135.43,2024,67.24558672650453,"Kopi, teh, rempah-rempah",II,Produk Nabati
+10,17392558.98,2024,-44.05619546450252,Serealia,II,Produk Nabati
+11,94547485.21000001,2024,-49.289512411779555,Produk penggilingan,II,Produk Nabati
+12,412639195.87,2024,-8.338992336275142,Biji dan buah mengandung minyak,II,Produk Nabati
+13,210244844.99,2024,-1.5812249002283296,Getah dan damar,II,Produk Nabati
+14,554352083.14,2024,-11.85519010165253,Bahan anyaman nabati,II,Produk Nabati
+15,26857558516.13,2024,-5.60331322498897,Lemak dan minyak hewani/nabati,III,Lemak dan Minyak
+16,1388269657.04,2024,1.9450452676432317,Olahan daging dan ikan,IV,"Makanan Olahan, Minuman, Tembakau"
+17,527401776.25,2024,2.4739246590263524,Gula dan kembang gula,IV,"Makanan Olahan, Minuman, Tembakau"
+18,2646153269.7599998,2024,120.93710070379522,Kakao dan olahannya,IV,"Makanan Olahan, Minuman, Tembakau"
+19,1633468478.05,2024,9.259811109382342,"Olahan serealia, tepung, pati",IV,"Makanan Olahan, Minuman, Tembakau"
+20,453608302.39,2024,19.881137695999566,Olahan sayuran dan buah,IV,"Makanan Olahan, Minuman, Tembakau"
+21,1755740588.8799999,2024,8.06619618447362,Olahan makanan lain-lain,IV,"Makanan Olahan, Minuman, Tembakau"
+22,227158373.32,2024,18.15711788258624,"Minuman, alkohol, cuka",IV,"Makanan Olahan, Minuman, Tembakau"
+23,2021530328.74,2024,-23.004902650640187,Sisa industri makanan; pakan ternak,IV,"Makanan Olahan, Minuman, Tembakau"
+24,2081629879.56,2024,19.10038421088833,Tembakau,IV,"Makanan Olahan, Minuman, Tembakau"
+01,8355361.39,2025,54.280666438539335,Hewan hidup,I,Produk Hewani
+02,13219301.690000001,2025,-39.06687426127415,Daging dan jeroan yang dapat dimakan,I,Produk Hewani
+03,4199028791.0,2025,5.090577272954418,Ikan dan krustasea,I,Produk Hewani
+04,562340782.35,2025,-9.51744628930436,Susu; telur unggas; madu,I,Produk Hewani
+05,44490704.54,2025,-1.7410322877560898,Produk hewani lainnya,I,Produk Hewani
+06,22405093.6,2025,5.343264518507464,Tanaman hidup dan bunga,II,Produk Nabati
+07,110247865.57000001,2025,-29.46840778445913,Sayuran,II,Produk Nabati
+08,1437889301.41,2025,48.556715577442006,Buah dan kacang-kacangan,II,Produk Nabati
+09,3420886367.03,2025,26.89773116566559,"Kopi, teh, rempah-rempah",II,Produk Nabati
+10,5573170.5,2025,-67.95658128048504,Serealia,II,Produk Nabati
+11,96101016.84,2025,1.6431231635081953,Produk penggilingan,II,Produk Nabati
+12,527649287.75,2025,27.871829198754394,Biji dan buah mengandung minyak,II,Produk Nabati
+13,194584759.24,2025,-7.448499272714558,Getah dan damar,II,Produk Nabati
+14,633847507.39,2025,14.340240916876587,Bahan anyaman nabati,II,Produk Nabati
+15,34352498836.850002,2025,27.906260787698635,Lemak dan minyak hewani/nabati,III,Lemak dan Minyak
+16,1519309648.55,2025,9.43908777703872,Olahan daging dan ikan,IV,"Makanan Olahan, Minuman, Tembakau"
+17,468704142.07,2025,-11.129585986107116,Gula dan kembang gula,IV,"Makanan Olahan, Minuman, Tembakau"
+18,3597849471.66,2025,35.965271277967844,Kakao dan olahannya,IV,"Makanan Olahan, Minuman, Tembakau"
+19,1699856584.99,2025,4.064241693800714,"Olahan serealia, tepung, pati",IV,"Makanan Olahan, Minuman, Tembakau"
+20,519503590.35,2025,14.526913994476468,Olahan sayuran dan buah,IV,"Makanan Olahan, Minuman, Tembakau"
+21,1972531529.1399999,2025,12.347549611431639,Olahan makanan lain-lain,IV,"Makanan Olahan, Minuman, Tembakau"
+22,307306498.12,2025,35.282927777922865,"Minuman, alkohol, cuka",IV,"Makanan Olahan, Minuman, Tembakau"
+23,1003155838.51,2025,-50.3764141329872,Sisa industri makanan; pakan ternak,IV,"Makanan Olahan, Minuman, Tembakau"
+24,2310799899.07,2025,11.00916266432727,Tembakau,IV,"Makanan Olahan, Minuman, Tembakau"
