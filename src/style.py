@@ -86,6 +86,15 @@ def inject_css():
       [data-testid="stMetricValue"] > div {{ font-weight:700; color:{TEKS}; font-size:20px;
           white-space:normal; overflow:visible; line-height:1.2; }}
       [data-testid="stMetricDelta"] {{ font-size:13px; }}
+      [data-testid="stMetricValue"] {{
+            white-space: normal !important;
+      }}
+        [data-testid="stMetricValue"] > div {{
+            white-space: normal !important;
+            word-break: break-word !important;
+            line-height: 1.2 !important;
+            font-size: 1.4rem !important; /* Sedikit dikecilkan agar muat rapi */
+        }}
 
       .kartu {{ background:{KARTU}; border:1px solid {BORDER}; border-top:3px solid {AKSEN};
           border-radius:8px; padding:16px 18px; min-height:132px;
