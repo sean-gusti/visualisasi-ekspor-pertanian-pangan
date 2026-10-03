@@ -3,7 +3,6 @@
 Proyek ini adalah sebuah dashboard interaktif yang memvisualisasikan data ekspor sektor pertanian dan pangan Indonesia. Aplikasi ini dibuat sebagai pemenuhan tugas Ujian Akhir Semester mata kuliah Visualisasi Data dan Informasi di Politeknik Statistika STIS tahun 2026. Dashboard ini ditujukan untuk memberikan gambaran mengenai struktur komoditas, arah aliran perdagangan, dan seberapa besar ketergantungan ekspor pangan Indonesia terhadap negara-negara tertentu.
 
 ![Tangkapan Layar Dashboard](docs/screenshots/hero.png)
-*(Catatan: Gambar tangkapan layar di atas masih berupa tautan kosong dan perlu diisi dengan berkas yang sesuai)*
 
 ## Fitur Utama
 
