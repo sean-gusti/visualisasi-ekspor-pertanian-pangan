@@ -93,7 +93,7 @@ def inject_css():
             white-space: normal !important;
             word-break: break-word !important;
             line-height: 1.2 !important;
-            font-size: 1.4rem !important; /* Sedikit dikecilkan agar muat rapi */
+            font-size: 1.4rem !important; 
         }}
 
       .kartu {{ background:{KARTU}; border:1px solid {BORDER}; border-top:3px solid {AKSEN};
@@ -563,3 +563,127 @@ def inject_scroll_anim():
     </script>"""
     import streamlit.components.v1 as components
     components.html(_JS_ANIM, height=0)
+    
+def inject_geometri():
+    _JS_GEO = """<script>
+    (function(){
+        const P = window.parent, D = P.document;
+
+        if (!D.getElementById('geo-style')) {
+            const st = D.createElement('style');
+            st.id = 'geo-style';
+            st.innerHTML = `
+                [class*="st-key-sec_"]:not(.st-key-sec_hero):not(.st-key-sec_footer){
+                    position:relative; overflow:hidden;
+                }
+                .geo-layer{position:absolute; inset:0; overflow:hidden;
+                    pointer-events:none; z-index:0;}
+                [class*="st-key-sec_"]:not(.st-key-sec_hero):not(.st-key-sec_footer) > *:not(.geo-layer){
+                    position:relative; z-index:1;
+                }
+                .geo{position:absolute; will-change:transform;}
+                .geo.bulat{border-radius:50%;}
+                .geo.cincin{border-radius:50%; background:transparent !important;
+                    border:3px solid var(--w);}
+                .geo.kotak{border-radius:18%;}
+                .geo.segitiga{clip-path:polygon(50% 0%, 0% 100%, 100% 100%);}
+                .geo.titik{background-image:radial-gradient(var(--w) 2px, transparent 2.5px) !important;
+                    background-size:18px 18px; background-color:transparent !important;}
+                @keyframes geo-a{0%,100%{transform:translate(0,0) rotate(0deg);}
+                    50%{transform:translate(24px,-34px) rotate(25deg);}}
+                @keyframes geo-b{0%,100%{transform:translate(0,0) rotate(0deg) scale(1);}
+                    50%{transform:translate(-30px,22px) rotate(-30deg) scale(1.08);}}
+                @keyframes geo-c{0%{transform:rotate(0deg);} 100%{transform:rotate(360deg);}}
+                @media (max-width:768px){ .geo.sembunyi-hp{display:none;} }
+                @media (prefers-reduced-motion:reduce){ .geo{animation:none !important;} }
+            `;
+            D.head.appendChild(st);
+        }
+
+        const WARNA = ['#009E73','#009E73','#56B4E9','#E69F00'];
+        const BENTUK = ['bulat','cincin','kotak','segitiga','titik','cincin','kotak'];
+        const ANIM = ['geo-a','geo-b','geo-c'];
+
+        function acak(seed){
+            let s = seed;
+            return function(){ s = (s * 9301 + 49297) % 233280; return s / 233280; };
+        }
+
+        function pasang(){
+            ['hierarki','aliran','jaringan','akhir'].forEach(function(k, n){
+                const sec = D.querySelector('.st-key-sec_' + k);
+                if (!sec || sec.querySelector(':scope > .geo-layer')) return;
+
+                const r = acak(n * 977 + 13);
+                const layer = D.createElement('div');
+                layer.className = 'geo-layer';
+
+                for (let i = 0; i < 12; i++) {
+                    const el = D.createElement('div');
+                    const bentuk = BENTUK[Math.floor(r() * BENTUK.length)];
+                    const ukuran = bentuk === 'titik' ? 90 + r()*80 : 28 + r()*90;
+                    const w = WARNA[Math.floor(r() * WARNA.length)];
+                    const anim = bentuk === 'kotak' && r() > .5 ? 'geo-c' : ANIM[Math.floor(r()*2)];
+                    const dur = 14 + r() * 18;
+
+                    el.className = 'geo ' + bentuk + (i > 6 ? ' sembunyi-hp' : '');
+                    el.style.cssText =
+                        'width:' + ukuran + 'px;height:' + ukuran + 'px;' +
+                        'left:' + (r()*92) + '%;top:' + (r()*92) + '%;' +
+                        'background:' + w + ';--w:' + w + ';' +
+                        'opacity:' + (0.08 + r()*0.12) + ';' +
+                        'animation:' + anim + ' ' + dur + 's ease-in-out infinite;' +
+                        'animation-delay:-' + (r()*dur) + 's;';
+                    layer.appendChild(el);
+                }
+                sec.insertBefore(layer, sec.firstChild);
+            });
+        }
+        pasang();
+        setInterval(pasang, 1000);  
+    })();
+    </script>"""
+    import streamlit.components.v1 as components
+    components.html(_JS_GEO, height=0)
+    
+def css_segmen():
+    """Radio horizontal jadi tombol segmen (rata tengah). Berlaku untuk container ber-key 'segmen_*'."""
+    st.markdown("""<style>
+    [class*="st-key-segmen_"] [data-testid="stWidgetLabel"]{
+        justify-content:center !important; margin-bottom:.4rem;
+    }
+    [class*="st-key-segmen_"] [data-testid="stWidgetLabel"] p{
+        text-align:center; font-weight:600; color:#202124;
+    }
+
+    [class*="st-key-segmen_"] [data-testid="stRadio"] div[role="radiogroup"]{
+        display:flex !important; flex-direction:row !important; flex-wrap:nowrap !important;
+        justify-content:center !important; gap:2px !important;
+        width:fit-content !important; margin:0 auto !important;
+        background:#F1F5F4; border:1px solid #D5E3DF; border-radius:999px;
+        padding:3px !important;
+    }
+    [class*="st-key-segmen_"] div[role="radiogroup"] > label{
+        display:flex !important; align-items:center !important; justify-content:center !important;
+        margin:0 !important; gap:0 !important; min-height:0 !important;
+        padding:7px 18px !important; border-radius:999px; cursor:pointer;
+        transition:background .2s;
+    }
+    [class*="st-key-segmen_"] div[role="radiogroup"] > label > div:first-child{
+        display:none !important; width:0 !important; margin:0 !important; padding:0 !important;
+    }
+    [class*="st-key-segmen_"] div[role="radiogroup"] > label p{
+        margin:0 !important; font-size:.88rem !important; font-weight:600;
+        color:#202124; white-space:nowrap; text-align:center; line-height:1.2 !important;
+    }
+    [class*="st-key-segmen_"] div[role="radiogroup"] > label:hover{background:#E1EFEA;}
+    [class*="st-key-segmen_"] div[role="radiogroup"] > label:has(input:checked){
+        background:#009E73; box-shadow:0 1px 3px rgba(0,0,0,.18);
+    }
+    [class*="st-key-segmen_"] div[role="radiogroup"] > label:has(input:checked) p{color:#FFFFFF;}
+
+    @media (max-width:768px){
+        [class*="st-key-segmen_"] [data-testid="stRadio"] div[role="radiogroup"]{width:100% !important;}
+        [class*="st-key-segmen_"] div[role="radiogroup"] > label{flex:1 1 0; padding:7px 6px !important;}
+    }
+    </style>""", unsafe_allow_html=True)

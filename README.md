@@ -15,10 +15,10 @@ Dashboard ini terdiri dari satu halaman utama yang dibagi menjadi beberapa bagia
    Menggunakan visualisasi Treemap dan Sunburst untuk membedah komposisi nilai ekspor dari tingkat kelompok, komoditas, hingga negara tujuan pembeli. Warna pada visualisasi menunjukkan persentase perubahan nilai ekspor dibandingkan tahun lalu. Terdapat pengaturan interaktif untuk menyembunyikan komoditas minyak sawit dan menyesuaikan jumlah rincian negara tujuan tiap komoditas (5, 10, atau 20 negara).
 
 3. **Aliran Perdagangan (Aliran)**
-   Melacak ke mana komoditas diekspor menggunakan diagram Sankey dan Peta Aliran Geospasial (Flow Map). Pengguna dapat mengatur ambang persentase kontribusi komoditas dan membatasi jumlah negara tujuan teratas untuk menyaring informasi dan mengurangi kepadatan visual.
+   Melacak ke mana komoditas diekspor menggunakan dua visual. Diagram Sankey menunjukkan aliran dari kelompok komoditas ke negara tujuan, sedangkan Peta Aliran Geospasial (Flow Map) menggambarkan hubungan ekspor dari Indonesia ke tiap negara tujuan, dengan ketebalan garis dan ukuran titik sesuai nilai ekspor. Pengguna dapat mengatur ambang persentase kontribusi komoditas dan membatasi jumlah negara tujuan teratas untuk menyaring informasi dan mengurangi kepadatan visual.
 
-4. **Jaringan Negara Tujuan (Jaringan)**
-   Menganalisis keterkaitan antara komoditas dengan negara mitranya menggunakan Force-Directed Bipartite Graph yang dapat diproyeksikan ke peta geospasial, serta matriks hubungan (Adjacency Matrix). Visualisasi ini menunjukkan nilai sentralitas suatu titik. Terdapat pengaturan ambang nilai minimum dalam juta USD dan opsi untuk menyorot hubungan secara spesifik.
+4. **Jaringan Pelabuhan/Bandara dan Negara Tujuan (Jaringan)**
+   Menganalisis keterkaitan antara pelabuhan/bandara ekspor dengan negara mitranya menggunakan Force-Directed Bipartite Graph yang dapat diproyeksikan ke peta geospasial, serta matriks hubungan (Adjacency Matrix). Ukuran titik menunjukkan nilai sentralitas (degree centrality), yaitu seberapa banyak mitra yang terhubung. Terdapat pengaturan ambang nilai minimum dalam juta USD dan opsi sorot hubungan bertingkat: pengguna memilih jenis (pelabuhan atau negara), lalu memilih nama spesifik. Tampilan dapat dibatasi hanya pada node terpilih beserta mitranya, atau tetap menampilkan seluruh jaringan dengan jalur terpilih yang menyala.
 
 ## Struktur Direktori
 
@@ -85,10 +85,11 @@ Terdapat beberapa batasan dalam analisis visualisasi ini:
 - Analisis hanya dilakukan pada tingkat chapter, bukan pada komoditas rinci.
 - Nama kelompok komoditas adalah ringkasan buatan penulis, bukan nama resmi dari BTKI.
 - Pengaturan ambang nilai batas dan jumlah negara teratas memengaruhi tampilan visualisasi pada kelompok Aliran dan Jaringan.
+- Koordinat pelabuhan pada mode peta diisi manual dan sebagian merupakan perkiraan. Pelabuhan yang koordinatnya belum tercatat tidak tampil di mode peta, tetapi tetap ada di mode graf.
 
 ## Penggunaan Alat AI
 
-Asisten AI dipakai untuk membantu menulis, men-debug kode, serta keperluan teknis dalam pengkodingan. Seluruh data, angka, rancangan visual, dan hasil dibuat, diperiksa, dan dipahami sendiri oleh penulis.
+Asisten AI dipakai untuk membantu menulis, men-debug kode, serta membantu keperluan teknis dalam pengkodingan. Seluruh data, angka, rancangan visual, dan hasil dibuat, diperiksa, dan dipahami sendiri oleh penulis.
 
 ## Kredit dan Lisensi
 

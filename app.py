@@ -14,6 +14,7 @@ style.inject_sections()
 style.inject_extra("assets/hero.jpg")
 style.inject_aksesibilitas()
 style.inject_scroll_anim()
+style.inject_geometri()
 
 ch = data.chapter_tahun()
 
@@ -47,8 +48,22 @@ with st.container(key="sec_hero"):
         value=top["nama_chapter"]
     )
     c3.metric("Negara tujuan", f"{n_negara}")
-    c4.metric("Pertumbuhan y-o-y",
-              f"{(total - prev) / prev:+.1%}" if prev > 0 else "n/a")
+    
+    tahun_awal = 2023   
+    if prev > 0:
+        pertumbuhan = (total - prev) / prev
+        c4.metric(
+            "Pertumbuhan y-o-y",
+            f"{pertumbuhan:+.1%}",
+            delta=f"dibanding {tahun - 1}",
+            delta_color="off",
+        )
+    else:
+        c4.metric(
+            "Pertumbuhan y-o-y",
+            f"Tidak ada pembanding",
+            delta_color="off",
+        )
     st.markdown("<br><br>", unsafe_allow_html=True)
 
 # ---- 1. Hierarki ----

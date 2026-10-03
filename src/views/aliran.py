@@ -1,4 +1,4 @@
-"""Section Aliran: Sankey + Flow Map Geospasial. Komoditas -> Negara tujuan. Sumber: BPS."""
+"""Section Aliran: Sankey (Komoditas -> Negara) + Flow Map Geospasial (Indonesia -> Negara tujuan). Sumber: BPS."""
 import pandas as pd
 import plotly.graph_objects as go
 import streamlit as st
@@ -119,12 +119,10 @@ def _ambil_koordinat(nama_negara):
     return (0, 0)
 
 def _potong(s, maks=26):
-    """Potong label panjang agar muat di node Sankey."""
     return s if len(s) <= maks else s[:maks - 1].rstrip() + "…"
 
 
 def _siap(tahun, ambang, topn):
-    """Siapkan data aliran: komoditas → negara, setelah filter ambang dan topN."""
     cn = data.chapter_negara_tahun()
     d = cn[cn["tahun"] == tahun].copy()
     total = d["nilai_usd"].sum()
@@ -156,7 +154,6 @@ def _siap(tahun, ambang, topn):
 # ---- Sankey ----
 
 def _fig_sankey(alir, total):
-    """Diagram Sankey: komoditas (kiri) → negara tujuan (kanan)."""
     sumber = sorted(alir["ch_label"].unique(),
                     key=lambda x: (x == "Komoditas lainnya", x))
     tujuan = sorted(alir["neg_label"].unique(),
@@ -221,7 +218,6 @@ def _fig_sankey(alir, total):
 # ---- Flow Map (Peta Aliran Geospasial) ----
 
 def _fig_flow_map(alir, total):
-    """Peta Aliran (Flow Map): Menampilkan garis ekspor dari Indonesia ke negara tujuan."""
     df_map = alir.groupby("neg_label", as_index=False)["nilai_usd"].sum()
     df_map = df_map[df_map["neg_label"] != "Negara lainnya"].sort_values("nilai_usd", ascending=False)
     

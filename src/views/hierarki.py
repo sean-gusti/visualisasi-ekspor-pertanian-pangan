@@ -1,4 +1,4 @@
-"""Section Hierarki: treemap + sunburst. Kelompok > Komoditas > Negara. Sumber: BPS."""
+"""Section Hierarki: treemap + sunburst. Kelompok Komoditas > Komoditas > Negara. Sumber: BPS."""
 import pandas as pd
 import plotly.graph_objects as go
 import streamlit as st
@@ -8,12 +8,10 @@ FONT = "Inter, Arial, sans-serif"
 
 
 def _potong(s, maks=22):
-    """Potong label panjang dengan titik-titik (ellipsis) untuk kotak besar."""
     return s if len(s) <= maks else s[:maks - 1].rstrip() + "…"
 
 
 def _tabel_node(tahun, sembunyi15, k):
-    """Tabel node: id, label, parent, cur (tahun ini), prev (tahun lalu), tingkat, kode, yoy."""
     cn = data.chapter_negara_tahun()
     if sembunyi15:
         cn = cn[cn["hs2"] != "15"]
@@ -52,7 +50,6 @@ def _tabel_node(tahun, sembunyi15, k):
 
 
 def _fig(n, jenis, total):
-    """Treemap/sunburst. Ukuran = nilai ekspor, warna = perubahan dari tahun lalu."""
     warna = n["yoy"].clip(-50, 50).fillna(0)
     yoy_txt = n["yoy"].map(lambda v: "tidak ada pembanding" if pd.isna(v)
                            else f"{v:+.1f}%".replace(".", ","))
@@ -144,16 +141,18 @@ def render_hierarki(tahun: int):
                            value=False, key="h_s15")
     if sembunyi15:
         st.caption("Lemak dan Minyak disembunyikan: porsi di tooltip dihitung terhadap total tanpa Komoditas Lemak dan Minyak.")
-    pilihan = st.radio("Detail negara tujuan per komoditas",
-                       ["Ringkas (5 negara)", "Sedang (10 negara)", "Lengkap (20 negara)"],
-                       index=1, horizontal=True, key="h_detail",
-                       help="Jumlah negara tujuan terbesar di tiap komoditas; sisanya digabung 'Lainnya'.")
-    k = {"Ringkas (5 negara)": 5, "Sedang (10 negara)": 10, "Lengkap (20 negara)": 20}[pilihan]
-    
+    style.css_segmen()
+    with st.container(key="segmen_detail"):
+        pilihan = st.radio(
+            "Detail negara tujuan per komoditas",
+            ["5 negara", "10 negara", "20 negara"],
+            index=1, horizontal=True, key="h_detail",
+            help="Jumlah negara tujuan terbesar di tiap komoditas; sisanya digabung 'Lainnya'.",
+        )
+    k = {"5 negara": 5, "10 negara": 10, "20 negara": 20}[pilihan]
+
     st.caption("**Panduan Filter:** ")
-    st.caption("Jika memilih 'Ringkas (5 negara)', saat sebuah komoditas diklik, grafik hanya akan memunculkan 5 negara pembeli terbesar untuk komoditas tersebut. Sisa negara lainnya otomatis digabung ke bagian 'Lainnya'.")
-    
-    k = {"Ringkas (5 negara)": 5, "Sedang (10 negara)": 10, "Lengkap (20 negara)": 20}[pilihan]
+    st.caption(f"Saat sebuah komoditas diklik, grafik hanya memunculkan {k} negara pembeli terbesar untuk komoditas tersebut. Sisa negara lainnya otomatis digabung ke bagian 'Lainnya'.")
 
     n = _tabel_node(tahun, sembunyi15, k)
     total = n.loc[n["tingkat"] == "Kelompok", "cur"].sum()
