@@ -15,6 +15,7 @@ style.inject_extra("assets/hero.jpg")
 style.inject_aksesibilitas()
 style.inject_scroll_anim()
 style.inject_geometri()
+style.inject_scroll_hint()
 
 ch = data.chapter_tahun()
 
@@ -83,7 +84,7 @@ with st.container(key="sec_aliran"):
 # ---- 3. Jaringan ----
 with st.container(key="sec_jaringan"):
     style.anchor("jaringan")
-    st.header("3. Pelabuhan/Bandara mana yang melayani negara mana?")
+    st.header("3. Bagaimana jaringan negara tujuan ekspor?")
     with st.spinner("Membangun jaringan negara tujuan..."):
         render_jaringan(tahun)
 

@@ -687,3 +687,62 @@ def css_segmen():
         [class*="st-key-segmen_"] div[role="radiogroup"] > label{flex:1 1 0; padding:7px 6px !important;}
     }
     </style>""", unsafe_allow_html=True)
+    
+def inject_scroll_hint():
+    _JS_HINT = """<script>
+    (function(){
+        const P = window.parent, D = P.document;
+        ['scroll-hint','scroll-hint-style'].forEach(function(i){
+            const e = D.getElementById(i); if (e) e.remove();
+        });
+
+        const st = D.createElement('style');
+        st.id = 'scroll-hint-style';
+        st.innerHTML = `
+            #scroll-hint{
+                position:fixed; left:50%; bottom:64px; transform:translateX(-50%);
+                z-index:99998; display:flex; flex-direction:column; align-items:center;
+                gap:6px; cursor:pointer; color:#FFFFFF;
+                font-family:'Inter',sans-serif; font-size:.78rem; font-weight:600;
+                letter-spacing:1.5px; text-transform:uppercase;
+                text-shadow:0 1px 6px rgba(0,0,0,.6);
+                transition:opacity .4s ease, visibility .4s ease;
+            }
+            #scroll-hint.sembunyi{opacity:0; visibility:hidden; pointer-events:none;}
+            #scroll-hint .panah{
+                width:26px; height:26px; border:2px solid #FFFFFF; border-radius:50%;
+                display:flex; align-items:center; justify-content:center;
+                background:rgba(0,0,0,.25); animation:hint-pantul 1.6s ease-in-out infinite;
+            }
+            #scroll-hint svg{width:14px; height:14px; stroke:#FFFFFF; stroke-width:3; fill:none;}
+            @keyframes hint-pantul{0%,100%{transform:translateY(0);} 50%{transform:translateY(8px);}}
+            @media (prefers-reduced-motion:reduce){#scroll-hint .panah{animation:none;}}
+        `;
+        D.head.appendChild(st);
+
+        const el = D.createElement('div');
+        el.id = 'scroll-hint';
+        el.setAttribute('aria-label', 'Gulir ke bawah');
+        el.innerHTML = '<span>Scroll</span><div class="panah">' +
+            '<svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg></div>';
+        el.onclick = function(){
+            const next = D.querySelector('.st-key-sec_hierarki');
+            if (next) next.scrollIntoView({behavior:'smooth', block:'start'});
+        };
+        D.body.appendChild(el);
+
+        function cek(){
+            const hero = D.querySelector('.st-key-sec_hero');
+            if (!hero) return;
+            // tampil hanya selama bagian atas hero masih terlihat
+            const masihDiHero = hero.getBoundingClientRect().bottom > P.innerHeight * 0.85;
+            el.classList.toggle('sembunyi', !masihDiHero);
+        }
+        if (P.__hintScroll) D.removeEventListener('scroll', P.__hintScroll, true);
+        P.__hintScroll = cek;
+        D.addEventListener('scroll', cek, true);
+        setTimeout(cek, 300);
+    })();
+    </script>"""
+    import streamlit.components.v1 as components
+    components.html(_JS_HINT, height=0)

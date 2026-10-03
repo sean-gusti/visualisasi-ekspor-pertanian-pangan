@@ -13,7 +13,7 @@ Dashboard terdiri dari satu halaman yang dibagi menjadi empat bagian analisis. T
 | Ringkasan | Seberapa besar ekspor, dan bagaimana tren tahunannya? | Kartu metrik |
 | Hierarki | Komoditas apa yang dominan, dan ke mana tiap komoditas dijual? | Treemap, Sunburst |
 | Aliran | Bagaimana komoditas mengalir ke negara tujuan? | Sankey, Flow Map |
-| Jaringan | Pelabuhan/Bandara mana yang melayani negara mana? | Bipartite graph, Adjacency Matrix |
+| Jaringan | Bagaimana jaringan negara tujuan ekspor? | Bipartite graph, Adjacency Matrix |
 
 ### 1. Ringkasan (Hero)
 Menampilkan metrik utama: total nilai ekspor, komoditas penyumbang terbesar, jumlah negara tujuan, dan pertumbuhan year-on-year (y-o-y). Pengguna dapat memilih tahun data (2023, 2024, atau 2025). Karena data dimulai pada 2023, kartu pertumbuhan untuk 2023 menampilkan "Tahun dasar" (belum ada pembanding 2022).
