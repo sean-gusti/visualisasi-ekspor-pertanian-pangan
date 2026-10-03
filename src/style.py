@@ -248,7 +248,7 @@ _JS = """<script>
     #nv-dots a.aktif{transform:scale(1.6);border-color:#009E73;box-shadow:0 0 0 1px #009E73;}
     #btn-atas{position:fixed;right:18px;bottom:22px;z-index:99999;width:44px;height:44px;
       border-radius:50%;border:1px solid #009E73;background:#FFFFFF;color:#009E73;font-size:20px;
-      cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.15);opacity:0;pointer-events:none;
+      cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.15);opacity:0;pointer-events:none; bottom: 60px !important;
       transform:translateY(10px);transition:all .25s;}
     #btn-atas.tampil{opacity:1;pointer-events:auto;transform:none;}
     #btn-atas:hover{background:#009E73;color:#FFFFFF;}
