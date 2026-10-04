@@ -355,14 +355,24 @@ def _fig_network_geo(G, node_fokus):
 
 # ADJACENCY MATRIX
 def _fig_matrix(df):
-    pivot = df.pivot_table(index='pelabuhan', columns='negara', values='nilai_usd', aggfunc='sum').fillna(0)
+    pivot = df.pivot_table(index='pelabuhan', columns='negara',
+                           values='nilai_usd', aggfunc='sum').fillna(0)
     pivot = pivot.loc[pivot.sum(axis=1).sort_values(ascending=False).index]
+    teks = [[style.format_usd(v) for v in baris] for baris in pivot.values]
+
     fig = go.Figure(data=go.Heatmap(
         z=pivot.values, x=pivot.columns, y=list(pivot.index),
+        text=teks,
         colorscale="Greens",
-        hovertemplate="Pelabuhan/Bandara: %{y}<br>Negara: %{x}<br>Nilai Ekspor: %{customdata}<extra></extra>",
-        customdata=pivot.values.astype(float)
+        hovertemplate="Pelabuhan/Bandara: %{y}<br>Negara: %{x}<br>Nilai Ekspor: %{text}<extra></extra>",
     ))
+    fig.update_layout(
+        height=max(600, 22 * len(pivot.index)), margin=dict(l=10, r=10, t=30, b=80),
+        xaxis=dict(tickangle=45, tickfont=dict(size=10)),
+        yaxis=dict(tickfont=dict(size=10)),
+        font=dict(family=FONT, color=style.TEKS),
+        paper_bgcolor="rgba(0,0,0,0)", plot_bgcolor="rgba(0,0,0,0)",
+    )
     return fig
 
 def _css_kontrol():
