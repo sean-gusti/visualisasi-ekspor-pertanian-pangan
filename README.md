@@ -36,10 +36,25 @@ Pengguna dapat mengatur ambang persentase kontribusi komoditas dan membatasi jum
 - **Sorot hubungan bertingkat:** pilih jenis (pelabuhan atau negara), lalu nama spesifik. Tampilan dapat dibatasi pada node terpilih beserta mitranya, atau menampilkan seluruh jaringan dengan jalur terpilih yang menyala.
 
 ### Fitur pendukung
-- **Aksesibilitas:** panel samping untuk memperbesar teks, kontras tinggi, simulasi buta warna parsial, dan mode monokrom.
+- **Panel aksesibilitas:** panel di sisi kiri dengan empat tombol: perbesar teks, kontras tinggi, simulasi buta warna parsial, dan mode monokrom (hitam putih). Mode warna saling menggantikan, sedangkan perbesar teks bisa dipakai bersamaan. Di layar kecil, panel dapat dilipat lewat tombol panah.
 - **Palet ramah buta warna:** warna kategori memakai palet Okabe-Ito.
-- **Navigasi:** titik navigasi antarbagian dan tombol kembali ke atas.
-- **Responsif:** tampilan menyesuaikan layar kecil, dan animasi menghormati pengaturan *reduced motion* pengguna.
+- **Navigasi antarbagian:** titik navigasi di sisi kanan menandai bagian yang sedang dibaca dan dapat diklik untuk berpindah dengan gulir halus. Disembunyikan di layar sangat kecil.
+- **Tombol kembali ke atas:** tombol bulat di pojok kanan bawah yang muncul setelah pengguna meninggalkan bagian hero.
+- **Petunjuk Scroll:** indikator "Scroll" di bagian hero yang dapat diklik dan hilang otomatis setelah pengguna mulai menggulir.
+- **Layar pemuatan:** layar pembuka berlatar buram dengan animasi putar dan teks "Memuat Dasbor Ekspor..." saat dashboard pertama kali dibuka.
+- **Animasi gulir:** judul, kartu, grafik, dan panel muncul dengan efek geser dan memudar saat masuk ke layar.
+- **Latar geometris bergerak:** bentuk geometris transparan (lingkaran, cincin, persegi, segitiga, grid titik) yang melayang pelan di belakang tiap bagian, tanpa menghalangi klik pada konten.
+- **Hero dengan gambar latar:** bagian pembuka layar penuh dengan foto latar, judul, dan pemilih tahun.
+- **Kontrol interaktif:** pemilih tahun, pilihan jumlah negara bergaya tombol segmen, filter ambang nilai, dan sorot hubungan pada graf jaringan.
+- **Panduan dalam aplikasi:** panel lipat berisi cara membaca tiap grafik dan penjelasan fungsi filter, serta keterangan sumber dan satuan di bawah setiap grafik.
+- **Responsif dan hormati preferensi:** tata letak menyesuaikan layar kecil, dan animasi dinonaktifkan untuk pengguna yang mengaktifkan pengaturan *reduced motion*.
+- **Toolbar grafik (Plotly):** tiap grafik dilengkapi toolbar di pojok kanan atas dengan fitur:
+  - **Unduh sebagai PNG** (ikon kamera) untuk menyimpan grafik sebagai gambar;
+  - **Pan** (ikon panah silang) untuk menggeser area grafik;
+  - **Zoom in dan zoom out** (ikon + dan −) untuk memperbesar atau memperkecil tampilan;
+  - **Autoscale** (ikon kotak silang) untuk mengembalikan tampilan ke skala awal;
+  - **Layar penuh** (ikon sudut) untuk membuka grafik memenuhi layar.
+  Selain itu, grafik mendukung zoom dengan scroll mouse dan tooltip saat kursor diarahkan ke elemen grafik.
 
 ## Teknologi
 
