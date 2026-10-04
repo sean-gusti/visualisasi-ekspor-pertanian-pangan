@@ -4,9 +4,13 @@ from src import data, style
 from src.views.hierarki import render_hierarki
 from src.views.aliran import render_aliran
 from src.views.jaringan import render_jaringan
+from PIL import Image
 
-st.set_page_config(page_title="Peta Ekspor Pertanian dan Pangan Indonesia",
-                   layout="wide")
+st.set_page_config(
+    page_title="Visualisasi Ekspor Pertanian dan Pangan Indonesia",
+    page_icon=Image.open("assets/favicon.png"),
+    layout="wide",
+)
 style.daftar_template()
 style.inject_css()
 style.inject_loader()
