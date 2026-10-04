@@ -8,7 +8,6 @@ info = agg[["hs2", "nama_chapter", "seksi", "nama_seksi"]].drop_duplicates()
 
 
 def tambah_yoy(df, kunci):
-    """Pertumbuhan y-o-y (%) per kunci. NaN bila tahun sebelumnya tidak ada atau 0."""
     p = df.pivot_table(index=kunci, columns="tahun", values="nilai_usd",
                        aggfunc="sum", fill_value=0)
     tahun = sorted(p.columns)

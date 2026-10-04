@@ -647,7 +647,6 @@ def inject_geometri():
     components.html(_JS_GEO, height=0)
     
 def css_segmen():
-    """Radio horizontal jadi tombol segmen (rata tengah). Berlaku untuk container ber-key 'segmen_*'."""
     st.markdown("""<style>
     [class*="st-key-segmen_"] [data-testid="stWidgetLabel"]{
         justify-content:center !important; margin-bottom:.4rem;
@@ -734,7 +733,6 @@ def inject_scroll_hint():
         function cek(){
             const hero = D.querySelector('.st-key-sec_hero');
             if (!hero) return;
-            // tampil hanya selama bagian atas hero masih terlihat
             const masihDiHero = hero.getBoundingClientRect().bottom > P.innerHeight * 0.85;
             el.classList.toggle('sembunyi', !masihDiHero);
         }

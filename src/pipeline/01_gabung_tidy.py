@@ -14,7 +14,6 @@ C_HS, C_TAHUN, C_DATA = 0, 1, 3
 
 
 def angka_kurung(s):
-    """Ambil angka dalam kurung siku: '[08]Agustus' -> 8, '[01] Live animals' -> 1."""
     m = re.search(r"\[(\d{1,2})\]", str(s))
     return int(m.group(1)) if m else None
 
@@ -54,7 +53,7 @@ hasil = [baca_satu(f) for f in FILES]
 detail = pd.concat([h[0] for h in hasil], ignore_index=True)
 totals = pd.concat([h[1] for h in hasil])
 
-# Pembersihan ringan
+# Pembersihan
 detail["negara"] = detail["negara"].str.title()
 detail["bulan"] = pd.to_numeric(detail["bulan"], errors="coerce").astype("Int64")
 

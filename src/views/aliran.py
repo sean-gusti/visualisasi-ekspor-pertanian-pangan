@@ -128,7 +128,6 @@ def _siap(tahun, ambang, topn):
     total = d["nilai_usd"].sum()
     n_neg = d["negara"].nunique()
 
-    # Komoditas di bawah ambang % digabung jadi "Komoditas lainnya"
     ch = d.groupby(["hs2", "nama_chapter", "seksi"], as_index=False)["nilai_usd"].sum()
     ch["pct"] = ch["nilai_usd"] / total * 100
     besar = set(ch.loc[ch["pct"] >= ambang, "hs2"])
@@ -139,7 +138,6 @@ def _siap(tahun, ambang, topn):
     d["ch_seksi"] = d.apply(
         lambda r: r["seksi"] if r["hs2"] in besar else "X", axis=1)
 
-    # Negara di luar top-N digabung
     neg = d.groupby("negara")["nilai_usd"].sum().sort_values(ascending=False)
     top_neg = set(neg.head(topn).index)
     d["neg_label"] = d["negara"].where(d["negara"].isin(top_neg), "Negara lainnya")

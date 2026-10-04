@@ -8,7 +8,6 @@ PROC = Path(__file__).resolve().parents[1] / "data" / "processed"
 
 @st.cache_data
 def muat(nama: str) -> pd.DataFrame:
-    """Baca CSV olahan; kode HS dibaca sebagai teks agar '01' tetap '01'."""
     return pd.read_csv(PROC / nama, dtype={"hs2": str})
 
 

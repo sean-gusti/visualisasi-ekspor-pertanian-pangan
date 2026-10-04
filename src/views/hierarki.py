@@ -22,7 +22,6 @@ def _tabel_node(tahun, sembunyi15, k):
     d = a.merge(b, on=["hs2", "negara"], how="outer").fillna({"cur": 0, "prev": 0})
     d = d.merge(info, on="hs2")
 
-    # Negara terbesar per komoditas (berdasarkan tahun ini), sisanya "Lainnya"
     rank = d.groupby("hs2")["cur"].rank(method="first", ascending=False)
     d["neg"] = d["negara"].where(rank <= k, "Lainnya")
 
