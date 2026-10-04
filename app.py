@@ -132,14 +132,16 @@ with st.container(key="sec_akhir"):
 """)
         st.subheader("Keterbatasan")
         st.markdown("""
-- Analisis di level chapter, bukan komoditas rinci.
-- Nama kelompok komoditas adalah ringkasan penulis, bukan nama resmi BTKI.
-- Ambang nilai dan jumlah negara teratas memengaruhi tampilan Aliran dan Jaringan.
+- Analisis dilakukan pada tingkat chapter HS (2 digit), bukan komoditas rinci.
+- Nama kelompok komoditas adalah ringkasan buatan penulis, bukan nama resmi BTKI.
+- Data dimulai pada 2023, sehingga pertumbuhan y-o-y dan warna perubahan pada Hierarki tidak tersedia untuk 2023 (tahun dasar).
+- Ambang nilai dan jumlah negara teratas memengaruhi isi visual pada bagian Aliran dan Jaringan. Negara di luar top-N digabung ke "Negara lainnya" dan tidak digambar pada Flow Map.
 - Kolom pelabuhan pada data BPS mencampur pelabuhan laut dan bandara (bertanda "(U)"), dan keduanya diperlakukan sama.
+- Koordinat pelabuhan pada mode peta diisi manual dan sebagian merupakan perkiraan. Pelabuhan tanpa koordinat tidak tampil di mode peta, tetapi tetap ada di mode graf.
 """)
     with b:
         st.subheader("Penggunaan alat AI")
-        st.markdown("Asisten AI dipakai untuk membantu menulis, men-debug kode serta keperluan teknis dalam pengkodingan. Seluruh data, angka, rancangan visual dan hasil dibuat, diperiksa, dan dipahami sendiri oleh penulis.")
+        st.markdown("Asisten AI digunakan sebagai alat bantu untuk menulis dan men-debug kode, merapikan tampilan antarmuka, serta menyusun dokumentasi. Penulisan kode dibantu AI, penulisan dan pengambilan dokumentasi dan aset, pemilihan tema dan data BPS, rancangan visualisasi, serta interpretasi hasil ditentukan dan dipahami sendiri oleh penulis, yang bertanggung jawab penuh atas seluruh isi proyek.")
 
 # ---- Footer ----
 with st.container(key="sec_footer"):
